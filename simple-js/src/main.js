@@ -1,6 +1,9 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
+import heart from '/heart.svg'
+import javascriptLogo from './img/javascript.svg'
+import likeButton from './img/like.svg'
+import londonImg from './img/london.jpg'
 import { setupCounter } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
@@ -11,7 +14,16 @@ document.querySelector('#app').innerHTML = `
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
-    <h1>Hello Vite!</h1>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+      <img src="${likeButton}" class="logo vanilla" alt="JavaScript logo" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+      <img src="${heart}" class="logo vanilla" alt="JavaScript logo" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+      <img src="${londonImg}" class="logo vanilla" alt="JavaScript logo" />
+    </a>
+    <h1>Hello Vite!!</h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
@@ -22,3 +34,4 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+console.log(import.meta.env)
