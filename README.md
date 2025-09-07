@@ -8,6 +8,8 @@
 - npm run preview 
 - npm run build -- --mode pretest
     - running with pretest env
+- npm install vite-plugin-remove-console -D
+    - -D is for DEV
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
