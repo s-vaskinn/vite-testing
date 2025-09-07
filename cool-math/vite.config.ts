@@ -9,5 +9,8 @@ export default defineConfig({
             formats: ['es'],
         },
         minify: false,
+        rollupOptions: {
+            external: ["uuid"],
+        }
     }
 })

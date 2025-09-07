@@ -5,7 +5,7 @@ import javascriptLogo from './img/javascript.svg'
 import likeButton from './img/like.svg'
 import londonImg from './img/london.jpg'
 import { setupCounter } from './counter.js'
-import { average } from 'cool-math'  // to test if package is working
+import { average, randomUUID } from 'cool-math'  // to test if package is working
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -37,3 +37,4 @@ document.querySelector('#app').innerHTML = `
 setupCounter(document.querySelector('#counter'))
 console.log(import.meta.env)
 console.log('Average of 2,3,4 is: ', average(2,3,4))
+console.log('Random UUID: ', randomUUID())
