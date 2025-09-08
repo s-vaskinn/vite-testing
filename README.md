@@ -32,3 +32,5 @@ Static assets are copied from the public folder as default. `import viteLogo fro
 Installed ESLint VS Code extention to get type error messages real time.
 
 To test app on your mobile phone be on the same wifi and add `--host` to `"dev": "vite --host"` to the `package.json`'.
+
+Glob imports: importing all images from folder. 
