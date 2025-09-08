@@ -34,3 +34,13 @@ Installed ESLint VS Code extention to get type error messages real time.
 To test app on your mobile phone be on the same wifi and add `--host` to `"dev": "vite --host"` to the `package.json`'.
 
 Glob imports: importing all images from folder. 
+
+Importing css can be done by importing full css-files or modules.
+```js
+import '../assets/1.css'
+import '../assets/2.css'
+import colors from '../assets/3.module.css'
+...
+<p class=${colors.red}> This is colored by module css</p>
+```
+Modules has to be names `{module_name}.module.css` and can be used as example above.

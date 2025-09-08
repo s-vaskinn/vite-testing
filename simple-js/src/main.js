@@ -7,6 +7,12 @@ import londonImg from './img/london.jpg'
 import { setupCounter } from './counter.js'
 import { average, randomUUID } from 'cool-math'  // to test if package is working
 
+import '../assets/1.css'
+import '../assets/2.css'
+import colors from '../assets/3.module.css'
+
+console.log('Colors: ', colors)
+
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
@@ -25,6 +31,7 @@ document.querySelector('#app').innerHTML = `
       <img src="${londonImg}" class="logo vanilla" alt="JavaScript logo" />
     </a>
     <h1>Hello Vite!!</h1>
+    <p class=${colors.red}> This is colored by module css</p>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
