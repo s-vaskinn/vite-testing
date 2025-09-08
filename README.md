@@ -11,6 +11,7 @@
 - npm install vite-plugin-remove-console -D
     - -D is for DEV
 - npx vite-bundle-visualizer
+- npm -D vitest
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
