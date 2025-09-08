@@ -10,6 +10,7 @@
     - running with pretest env
 - npm install vite-plugin-remove-console -D
     - -D is for DEV
+- npx vite-bundle-visualizer
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
@@ -27,3 +28,7 @@ In package.json:
 Tree shaking - removing unused functions so that bundles are the smallest possible.
 
 Static assets are copied from the public folder as default. `import viteLogo from '/vite.svg'`. Files from below can be copied as `./xxx`. Small images, like svg, will be added to the bundle.
+
+Installed ESLint VS Code extention to get type error messages real time.
+
+To test app on your mobile phone be on the same wifi and add `--host` to `"dev": "vite --host"` to the `package.json`'.
