@@ -1,5 +1,17 @@
 # A project where I test Vite-React
 
+## Course
+
+I tok the course of Alex Dan on Udemy.
+
+https://www.udemy.com/course/vite-for-devs/
+
+https://github.com/alexhddev/vite-course
+
+Enjoyed the course. Minimalistic and easy to follow allong approach.
+
+Missing a `npm install -D @types/node' in the section 6 of the course in order to get the add watermark-to-image to work.
+
 ## Commands
 - npm create vite@latest
 - npm install
@@ -19,6 +31,7 @@
     - A popular image library for node
 - npm i -D @types/node
     - Had to install this package in addition to get WatermarkPlugin to work.
+- npm i -D vite-plugin-inspect
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
@@ -52,3 +65,17 @@ import colors from '../assets/3.module.css'
 <p class=${colors.red}> This is colored by module css</p>
 ```
 Modules has to be names `{module_name}.module.css` and can be used as example above.
+
+`variable?`is making the variable optional in typescript. `...options` can be added to a list of arguments and is called spread values. If options exist they overwrite standard argument.
+
+```ts
+// default options
+const options = {
+    text: 'Sample Watermark',
+    position: 'center',
+    color: 'white',
+    fontsize: 48,
+    ...options // spead user options
+}
+```
+

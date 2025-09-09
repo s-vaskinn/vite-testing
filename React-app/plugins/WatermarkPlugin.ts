@@ -2,19 +2,23 @@ import sharp from 'sharp';
 import fs from 'fs/promises';
 import path from 'path';
 
+type options = {
+    text?: string;
+    position?: String;
+    color?: string;
+    fontsize?: number;
+}
 
-
-
-export function WatermarkPlugin() {
+export function WatermarkPlugin(options?: options) {
     
-    const options = {
+    // Default options
+    options = {
         text: 'Sample Watermark',
         position: 'center',
         color: 'white',
-        fontsize: 48
-    }
-
-
+        fontsize: 48,
+        ...options // spead user options
+    };
 
     return {
         name: 'vite-image-text-plugin',
@@ -52,9 +56,9 @@ export function WatermarkPlugin() {
                     ])
                     .toBuffer();
 
-                    // Return the processed image as a base64 string
-                    const base64Image = processedImage.toString('base64');
-                    return `export default "data:image/${path.extname(id).slice(1)};base64,${base64Image}"`;
+                // Return the processed image as a base64 string
+                const base64Image = processedImage.toString('base64');
+                return `export default "data:image/${path.extname(id).slice(1)};base64,${base64Image}"`;
 
                 } catch (error) {
                     console.error('Error processing image:', error);
