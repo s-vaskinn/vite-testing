@@ -4,7 +4,7 @@ import path from 'path';
 
 type options = {
     text?: string;
-    position?: String;
+    position?: string;
     color?: string;
     fontsize?: number;
 }
