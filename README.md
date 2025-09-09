@@ -15,6 +15,10 @@
     - For simple project
 - npm i -D vitest jsdom @testing-library/react @testing-library/user-event @testing-library/jest-dom
     - For react project
+- npm i -D sharp
+    - A popular image library for node
+- npm i -D @types/node
+    - Had to install this package in addition to get WatermarkPlugin to work.
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's

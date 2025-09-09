@@ -4,9 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { ImageLists } from './components/ImageLists'
 
-function justAFunction(a:any) {
+/*function justAFunction(a:any) {
   console.log(a)
-}
+}*/
 
 function App() {
   const [count, setCount] = useState(0)

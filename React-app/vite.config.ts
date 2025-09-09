@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
+import { WatermarkPlugin } from './plugins/WatermarkPlugin'
 function manualChunks(id: any){
   if(id.includes('node_modules')){
       return "vendor"
@@ -10,7 +10,10 @@ function manualChunks(id: any){
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react()
+    ,WatermarkPlugin()
+  ],
   build: {
     rollupOptions: {
       output: {
