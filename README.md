@@ -12,6 +12,14 @@ Enjoyed the course. Minimalistic and easy to follow allong approach.
 
 Missing a `npm install -D @types/node' in the section 6 of the course in order to get the add watermark-to-image to work.
 
+cool-math
+React-app
+simple-js
+
+Then I took the course of Brad Traversy.
+
+https://www.udemy.com/course/modern-react-from-the-beginning/
+
 ## Commands
 - npm create vite@latest
 - npm install
@@ -78,4 +86,16 @@ const options = {
     ...options // spead user options
 }
 ```
+
+TanStack fetching, syncing updating data on API much easier. Maybe look into it.
+
+Recommended extensions
+- Simple React Snippet
+    - sfc + enter -> gives functions
+- Es7+ React/Redux to make snippets. But above is working more often.
+- Prettier - C 
+    - Makes code prettier. "->' etc
+- JavaScript (ES6)
+- dotenv
+    - gives syntax highlighting
 
