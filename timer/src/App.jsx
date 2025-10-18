@@ -1,7 +1,13 @@
+import { useState } from "react";
+import TimerFrame from "./components/TimerFrame";
+
 const App = () => {
   return (
-    <> My app</>
-  )
-}
+  <div>
+    <TimerFrame />
+    <TimerFrame />
+  </div>
+  );
+};
 
 export default App;

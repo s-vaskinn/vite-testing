@@ -102,3 +102,12 @@ Recommended extensions
 useState Hook:
 `const [value, setValue] = useState(initialValue);`
 setValue is a special function that set the value. useState sets the initial state. Carefull with .push and ++ since React cannot detect those changes.
+
+Controlled inputs:
+React manages the input value through state.
+Like useState, OnChange
+
+Uncontrolled inputs:
+The DOM manages the input value.
+Access via useRef.
+
