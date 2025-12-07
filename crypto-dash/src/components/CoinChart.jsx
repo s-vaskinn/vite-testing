@@ -37,7 +37,7 @@ const CoinChart = (coinId) => {
             const res = await fetch(`${API_URL}${coinId}/market_chart?vs_currency=usd&days=7`);
             const data = await res.json();
             console.log(data);
-            const prices = data.prices.map(price => ({
+            const prices = data.prices.map((price) => ({
                 x: price[0],
                 y: price[1]
             }));
