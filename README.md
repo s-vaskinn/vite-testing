@@ -111,3 +111,16 @@ Uncontrolled inputs:
 The DOM manages the input value.
 Access via useRef.
 
+Context:
+When you want to share data, themes, states and instead of passing props through many levels one may use context.
+
+1. Create context
+`const MyContext = React.createContext();`
+2. Provide a value
+```
+ <MyContext.Provider value={someValue}>
+  <App />
+</MyContext.Provider>
+```
+3. Consume the value
+`const value = useContext(MyContext);`
