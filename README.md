@@ -124,3 +124,8 @@ When you want to share data, themes, states and instead of passing props through
 ```
 3. Consume the value
 `const value = useContext(MyContext);`
+
+
+Shopping cart ui:
+`npm install json-server --save-dev`
+`json-server --watch db.json --port 3001`
