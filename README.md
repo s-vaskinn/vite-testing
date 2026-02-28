@@ -129,3 +129,33 @@ When you want to share data, themes, states and instead of passing props through
 Shopping cart ui:
 `npm install json-server --save-dev`
 `json-server --watch db.json --port 3001`
+
+Frendly dev:
+```ts
+type user = {
+    name: string;
+    email: string;
+    age?: number; // ? means optional
+}
+```
+
+` let name: string = "Sindre" `
+Can not overwrite to number as in python.
+
+This is how to set type of object:
+```ts
+function printUser( {age, name}: {name:string, age:number} ){
+    console.log(`Name: ${name} and Age: ${age}`)
+}
+```
+
+One may run this to have generic function types:
+```ts
+function identity<T>(value: T):T{
+    return value
+}
+```
+It will make functions like .toUpperCase() and toFixed() work on the function result.
+
+
+During client-side hydration, React indeed runs JavaScript to transform the static HTML into a dynamic web application by adding interactivity. This process enhances user experience by allowing the web page to respond to user inputs and updates without requiring a full page reload.

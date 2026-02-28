@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import type { Route } from "./+types/index";
+
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -21,5 +21,5 @@ export default function Home() {
   //  console.log("Current time (server):", now);
   //}
   
-  return <section> my app </section>;
+  return <> Homepage </>;
 }
