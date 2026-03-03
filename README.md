@@ -40,6 +40,8 @@ https://www.udemy.com/course/modern-react-from-the-beginning/
 - npm i -D @types/node
     - Had to install this package in addition to get WatermarkPlugin to work.
 - npm i -D vite-plugin-inspect
+- json-server --watch db.json --port 8000
+- run npm json-server
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
