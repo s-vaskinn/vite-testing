@@ -3,6 +3,7 @@ import type { Route } from "./+types/index";
 import type { Project } from "~/types";
 import ProjectCard from "~/components/ProjectCard";
 import Pagination from "~/components/Pagination";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function meta({}:Route.MetaArgs){
   return [
@@ -20,7 +21,7 @@ export async function loader( { request }:Route.LoaderArgs):Promise<any> {
 const ProjectPage = ( {loaderData}: Route.ComponentProps) => {
     //console.log(projects);
     const [selectedCategory, setSelectedCategory] = useState<string>("All");
-    const itemsPerPage = 2;
+    const itemsPerPage = 10;
     const [currentPage, setCurrentPage] = useState(1);
     const { projects } = loaderData as { projects: Project[]};
     // Get unique categories for filter dropdown
@@ -52,11 +53,17 @@ const ProjectPage = ( {loaderData}: Route.ComponentProps) => {
                     </button>
                 ))}
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
-                {currentProjects.map((project) => (
-                    <ProjectCard key={project.id} project={project} />
-                ))}
-            </div>
+            
+            <AnimatePresence mode="wait" >
+                <motion.div layout className="grid gap-6 sm:grid-cols-2">
+                    {currentProjects.map((project) => (
+                        <motion.div layout key={project.id}>
+                            <ProjectCard key={project.id} project={project} />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </AnimatePresence>
+
             <Pagination 
                 currentPage={currentPage} 
                 totalPages={totalPages} 
