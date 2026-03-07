@@ -43,6 +43,8 @@ https://www.udemy.com/course/modern-react-from-the-beginning/
 - json-server --watch db.json --port 8000
 - run npm json-server
 - npm i framer-motion
+- npm i react-markdown
+- npm i -D @tailwindcss/typography
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
