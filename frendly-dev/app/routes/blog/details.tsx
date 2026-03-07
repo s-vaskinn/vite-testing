@@ -42,7 +42,7 @@ const BlogPostDetailsPage = ( {loaderData}: BlogPostDetailsPageProps ) => {
         <div className="max-w-3xl mx-auto px-6 py-12 bg-gray-900">
             <h1 className="text-white text-3xl font-bold mb-4">Blog Details Page</h1>
             <h2 className="text-white text-2xl font-semibold mb-2">{postMeta.title}</h2>
-            <p className="text-gray-400 mb-6">{postMeta.date}</p>
+            <p className="text-gray-400 mb-6">{new Date(postMeta.date).toDateString()}</p>
             <div className="max-w-none mb-12 prose prose-invert">
                 <ReactMarkdown>{markdown}</ReactMarkdown>
             </div>
