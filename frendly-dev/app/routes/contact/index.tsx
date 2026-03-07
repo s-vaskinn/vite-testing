@@ -11,6 +11,16 @@ export async function action({ request }: Route.ActionArgs){
     // Here you would typically handle the form submission, e.g., save to a database or send an email.
     console.log("Form submitted:", data);
 
+    const errors:Record<string, string> = {};
+    if (!name) errors.name = "Name is required";
+    if (!email) errors.email = "Email is required";
+    if (!subject) errors.subject = "Subject is required";
+    if (!message) errors.message = "Message is required";
+
+    if (Object.keys(errors).length > 0) {
+        return { errors, data };
+    }
+
     // could run database operations here
 
     // For now, we just return a success response.
