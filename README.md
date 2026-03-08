@@ -45,6 +45,8 @@ https://www.udemy.com/course/modern-react-from-the-beginning/
 - npm i framer-motion
 - npm i react-markdown
 - npm i -D @tailwindcss/typography
+- npm i @tanstack/react-query
+- npm i react-icons
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
