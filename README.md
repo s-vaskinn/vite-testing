@@ -47,6 +47,7 @@ https://www.udemy.com/course/modern-react-from-the-beginning/
 - npm i -D @tailwindcss/typography
 - npm i @tanstack/react-query
 - npm i react-icons
+- npm i @tanstack/react-query-devtools
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
