@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchGithubUser } from "../api/github";
 import UserCard from "./UserCard";
+import RecentSearches from "./RecentSearches";
 
 
 const UserSearch = () => {
     const [username, setUsername] = useState("");
     const [submittedUsername, setSubmittedUsername] = useState("");
+    const [recentUsers, setRecentUsers] = useState<string[]>([]);
 
     const { data, isLoading, error } = useQuery({
         queryKey: ["user", submittedUsername],
@@ -15,8 +17,17 @@ const UserSearch = () => {
     });
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        console.log("hello")
         e.preventDefault();
-        setSubmittedUsername(username);
+        const trimmed = username.trim();
+        if (!trimmed) return;
+
+        setSubmittedUsername(trimmed);
+        setRecentUsers((prev) => {
+            const updated = [trimmed, ...prev.filter((u) => u !== trimmed)];
+            return updated.slice(0, 5);
+        });
+        console.log("hello 2")
     };
 
     return (
@@ -31,11 +42,6 @@ const UserSearch = () => {
             />
             <button
             type="submit"
-            onClick={(e) => {
-                e.preventDefault();
-                setSubmittedUsername(username);
-            }}
-            className="bg-blue-500 text-white px-4 py-2 rounded"
             >
             Search
             </button>
@@ -43,6 +49,18 @@ const UserSearch = () => {
         {isLoading && <p>Loading...</p>}
         {error && <p className="status error">{error.message}</p>}
         {data && <UserCard user={data} />}
+        {<p> # recent users {recentUsers.length}</p>}
+        {recentUsers.length > 0 && (
+            <RecentSearches 
+                users={recentUsers} 
+                onSelect={(user) => {
+                    setUsername(user);
+                    setSubmittedUsername(user);
+                    }
+                } 
+            />
+        )}
+        {<p> # recent users {recentUsers.length}</p>}  
         </>
         );
     };
