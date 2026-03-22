@@ -1,16 +1,28 @@
-import { Outlet, createRootRoute } from '@tanstack/react-router'
+import { HeadContent, Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import '../styles.css'
 
 export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      {
+        name: 'description',
+        content: 'Share, explore, and discuss your ideas with the world!',
+      },
+      {
+        title: "IdeaDrop - Share and Explore Ideas",
+      }
+    ],
+  }),
   component: RootComponent,
 })
 
 function RootComponent() {
   return (
     <>
+      <HeadContent />
       <Outlet />
       <TanStackDevtools
         config={{
