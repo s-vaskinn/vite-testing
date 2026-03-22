@@ -48,6 +48,7 @@ https://www.udemy.com/course/modern-react-from-the-beginning/
 - npm i @tanstack/react-query
 - npm i react-icons
 - npm i @tanstack/react-query-devtools
+- npm i sonner
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
