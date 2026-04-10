@@ -49,6 +49,7 @@ https://www.udemy.com/course/modern-react-from-the-beginning/
 - npm i react-icons
 - npm i @tanstack/react-query-devtools
 - npm i sonner
+- npm i axios
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
@@ -168,3 +169,5 @@ It will make functions like .toUpperCase() and toFixed() work on the function re
 
 
 During client-side hydration, React indeed runs JavaScript to transform the static HTML into a dynamic web application by adding interactivity. This process enhances user experience by allowing the web page to respond to user inputs and updates without requiring a full page reload.
+
+Axios is  a popular  library used to make HTTP requests from the browser, often for fetching or sending data to APIs.
