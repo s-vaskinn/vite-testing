@@ -1,21 +1,6 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { queryOptions, useSuspenseQuery } from '@tanstack/react-query'
-import type { Idea } from '@/types.ts'
-import api from "@/lib/axios.ts";
-
-/*
-const fetchIdea = async (ideaId: string): Promise<Idea> => {
-  const res = await fetch(`/api/ideas/${ideaId}`);
-  if (!res.ok) {
-    throw new Error('Failed to fetch idea details');
-  }
-  return res.json();
-};
-*/
-const fetchIdea = async (ideaId: string): Promise<Idea> => {
-  const res = await api.get(`/ideas/${ideaId}`);
-  return res.data;
-};
+import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
+import { queryOptions, useSuspenseQuery, useMutation } from '@tanstack/react-query'
+import { fetchIdea, deleteIdea } from '@/api/ideas.ts'
 
 const ideaQueryOptions = (ideaId: string) => queryOptions(
   {
@@ -32,18 +17,48 @@ export const Route = createFileRoute('/ideas/$ideaId/')({
 });
 
 function IdeaDetailsPage() {
-  //const name = Route.useLoaderData();
-  //const idea = Route.useLoaderData();
   const { ideaId } = Route.useParams();
-  //const idea = useSuspenseQuery(ideaQueryOptions(ideaId)).data;
   const { data:idea } = useSuspenseQuery(ideaQueryOptions(ideaId));
   // giving benefit og tanstack query's caching and background updates, we can directly use the query in the component without worrying about loading states 
   // or refetching data on navigation. The loader ensures that the data is available before rendering the component, providing a seamless user experience.  
+  const navigate = useNavigate();
+  const { mutateAsync: deleteMutate, isPending } = useMutation({
+    mutationFn: () => deleteIdea(ideaId),
+    onSuccess: () => {
+      navigate({ to: '/ideas' });
+    },
+  });
+  const handleDelete = async () => {
+    if (window.confirm('Are you sure you want to delete this idea?')) {
+      try {
+        await deleteMutate();
+      } catch (error) {
+        console.error(error);
+        alert('Something went wrong');
+      }
+    }
+  };
   return (
     <div className="p-4"> 
         <Link to="/ideas" className="text-blue-500 underline mb-4 block">Back to Ideas</Link>
         <h2 className="text-2xl font-bold"> {idea.title} </h2>
         <p className="mt-2"> {idea.description} </p>
+        {/* edit button */}
+        <Link
+          to={`/ideas/${ideaId}/edit`}
+          className="inline-block text-sm bg-yellow-500 hover:bg-yellow-600 text-white mt-4 mr-2 px-4 py-2 rounded transition"
+        >
+          Edit Idea
+        </Link>
+        {/* delete button */}
+        <button
+          className="text-sm bg-red-600 hover:bg-red-700 text-white mt-4 px-4 py-2 rounded transition disabled:opacity:50"
+          onClick={handleDelete}
+          disabled={isPending}
+        >
+          {isPending ? 'Deleting...' : 'Delete Idea'}
+        </button>
+
     </div>
   );  
 }

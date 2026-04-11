@@ -50,6 +50,7 @@ https://www.udemy.com/course/modern-react-from-the-beginning/
 - npm i @tanstack/react-query-devtools
 - npm i sonner
 - npm i axios
+- npm install lucide-react
 
 ## Notes
 Module bundle: grouping together .js css. png. files into one or multiple bunde.js's
