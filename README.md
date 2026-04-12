@@ -172,3 +172,14 @@ It will make functions like .toUpperCase() and toFixed() work on the function re
 During client-side hydration, React indeed runs JavaScript to transform the static HTML into a dynamic web application by adding interactivity. This process enhances user experience by allowing the web page to respond to user inputs and updates without requiring a full page reload.
 
 Axios is  a popular  library used to make HTTP requests from the browser, often for fetching or sending data to APIs.
+
+JWT - json web tokens:
+- Compact: Small size for easy transmission
+- Self-Contained: Contains all needed info
+- Stateless: No server-side session storage
+- Cross-Domain: Works across domains, ex in microservices
+- Secure: Can be signed/encrypted
+- Standardized: Follows open standard
+
+Access Token: short-lived token (5s-15min)
+Refresh Token: Long-lived token (30 days) that is stored in an HTTP-Only cookie and is not accessible to JS and is used to obtain new access tokens after expiration.
